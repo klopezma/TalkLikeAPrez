@@ -14,8 +14,8 @@ presidents = sorted(df['Name'].unique())
 st.title("🇺🇸 Talk Like a President")
 st.markdown(
 """
-Hi! Welcome to **Talk Like a President**.  
-This app uses simple NLP to rewrite your sentence in the style of real U.S. Presidents, based on their **inaugural addresses** — whether they served one or two terms.
+Hi! Welcome to my Talk Like a President project.  
+This app uses simple NLP to rewrite your sentence in the style of real U.S. Presidents, based on their **inaugural addresses**, whether they served one or two terms.
 
 **How to use**
 1. Choose a President from the dropdown.
