@@ -1,9 +1,10 @@
 import sys, os
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 import streamlit as st
 import pandas as pd
 from translator.pipeline import rewrite, rewrite_pos, load_data
-import re
+
 
 # Load data (if needed)
 df = pd.read_excel("prez_data.xlsx")
