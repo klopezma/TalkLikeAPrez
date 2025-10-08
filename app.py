@@ -26,7 +26,7 @@ You’ll see:
 - 🧱 **Basic Rewriter** — swaps vocabulary using that president’s inauguration speech.
 - 🧠 **POS-Based Rewriter** — mimics grammar, structure, and tone inspired by their rhetoric.
 
-*Educational demo — apolitical; not affiliated with any government or campaign.*
+*Educational demo: apolitical; not affiliated with any government or campaign.*
 """
 )
 
