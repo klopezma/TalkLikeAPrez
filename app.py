@@ -66,9 +66,10 @@ if st.button("Translate"):
 st.divider()
 st.write("🔒 Admin Access")
 
-admin_code = st.text_input("admin", type="password")
+admin_code = st.text_input("admin:", type="password")
+correct_code = st.secrets["ADMIN_CODE"]
 
-if admin_code == "vervuq-nuqja6-jujSon":
+if admin_code == correct_code:
     if os.path.exists("usage_log.csv"):
         df_log = pd.read_csv("usage_log.csv")
         st.subheader("📊 Usage Data (Private View)")
@@ -78,3 +79,4 @@ if admin_code == "vervuq-nuqja6-jujSon":
         st.write("No usage data yet.")
 elif admin_code:
     st.error("Incorrect admin code.")
+
