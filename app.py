@@ -23,8 +23,8 @@ This app uses simple NLP to rewrite your sentence in the style of real U.S. Pres
 3. Click **Translate**.
 
 You’ll see:
-- 🧱 **Basic Rewriter** — swaps vocabulary using that president’s inauguration speech.
-- 🧠 **POS-Based Rewriter** — mimics grammar, structure, and tone inspired by their rhetoric.
+- 🧱 **Basic Rewriter** - swaps vocabulary using that president’s inauguration speech.
+- 🧠 **POS-Based Rewriter** - mimics grammar, structure, and tone inspired by their rhetoric.
 
 *Educational demo: apolitical; not affiliated with any government or campaign.*
 """
