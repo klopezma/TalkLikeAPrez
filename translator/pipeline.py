@@ -26,7 +26,8 @@ def load_data(path: str = "prez_data.xlsx") -> pd.DataFrame:
     df = pd.read_excel(path)
     if 'clean' not in df.columns:
         df['clean'] = df['Text'].apply(clean)
-    df['President'] = df['President'].astype(str)
+ 
+    df['President'] = df['Name'].astype(str)
     return df
 
 

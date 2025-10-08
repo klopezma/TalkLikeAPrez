@@ -8,7 +8,7 @@ from translator.pipeline import rewrite, rewrite_pos, load_data
 
 # Load data (if needed)
 df = pd.read_excel("prez_data.xlsx")
-presidents = sorted(df['President'].unique())
+presidents = sorted(df['Name'].unique())
 
 # --- Streamlit UI ---
 st.title("🇺🇸 Talk Like a President")
