@@ -1,26 +1,36 @@
 import streamlit as st
 import pandas as pd
-from translator.pipeline import translate_text, clean
+from pipeline import rewrite, rewrite_pos, load_data
+import re
 
-st.set_page_config(page_title="Talk Like a President", page_icon="🦅")
+# Load data (if needed)
+df = pd.read_excel("prez_data.xlsx")
+presidents = sorted(df['President'].unique())
 
-st.title("🗽 Talk Like a President")
-st.write("Type your message and see how a President might say it!")
+# --- Streamlit UI ---
+st.title("🇺🇸 Talk Like a President")
+st.write("Enter a sentence and see how it sounds when rewritten in a presidential tone!")
 
-@st.cache_data
-def load_speeches():
-    df = pd.read_excel("prez_data.xlsx")
-    df['clean'] = df['Text'].apply(clean)
-    return df
+# Dropdown for president
+prezPick = st.selectbox("🎩 Choose a President", presidents)
 
-speeches = load_speeches()
+# Text input for sentence
+sentence = st.text_area("💬 Enter what you'd like to rewrite:")
 
-user_input = st.text_area("Enter a sentence:")
+# Button
 if st.button("Translate"):
-    if user_input.strip():
-        result = translate_text(user_input, speeches)
-        st.success(result)
-    else:
-        st.warning("Please type something first!")
+    if sentence.strip():
+        # Run both translators
+        basic_output = rewrite(sentence, prezPick)
+        pos_output = rewrite_pos(sentence, prezPick)
 
-st.caption("Educational demo — not affiliated with any government or campaign.")
+        # Display side by side
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader("🧱 Basic Rewriter")
+            st.success(basic_output)
+        with col2:
+            st.subheader("🧠 POS-Based Rewriter")
+            st.info(pos_output)
+    else:
+        st.warning("Please enter a sentence to translate.")
