@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from pipeline import rewrite, rewrite_pos, load_data
+from translator.pipeline import rewrite, rewrite_pos, load_data
 import re
 
 # Load data (if needed)
