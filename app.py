@@ -6,13 +6,31 @@ import pandas as pd
 from translator.pipeline import rewrite, rewrite_pos, load_data
 
 
-# Load data (if needed)
+# Load data 
 df = pd.read_excel("prez_data.xlsx")
 presidents = sorted(df['Name'].unique())
 
-# --- Streamlit UI ---
+
 st.title("🇺🇸 Talk Like a President")
-st.write("Enter a sentence and see how it sounds when rewritten in a presidential tone!")
+st.markdown(
+"""
+Hi! Welcome to **Talk Like a President**.  
+This app uses simple NLP to rewrite your sentence in the style of real U.S. Presidents, based on their **inaugural addresses** — whether they served one or two terms.
+
+**How to use**
+1. Choose a President from the dropdown.
+2. Type any sentence.
+3. Click **Translate**.
+
+You’ll see:
+- 🧱 **Basic Rewriter** — swaps vocabulary using that president’s inauguration speech.
+- 🧠 **POS-Based Rewriter** — mimics grammar, structure, and tone inspired by their rhetoric.
+
+*Educational demo — apolitical; not affiliated with any government or campaign.*
+"""
+)
+
+
 
 # Dropdown for president
 prezPick = st.selectbox("🎩 Choose a President", presidents)
