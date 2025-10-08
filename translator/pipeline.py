@@ -4,9 +4,11 @@ import pandas as pd
 import nltk
 from nltk import pos_tag, word_tokenize
 
-# Make sure NLTK resources are ready
+
 nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)  # <— NEW LINE
 nltk.download('averaged_perceptron_tagger', quiet=True)
+
 
 
 # ---------- CLEANING ----------
