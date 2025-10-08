@@ -18,7 +18,7 @@ st.title("🇺🇸 Talk Like a President")
 
 st.markdown(
 """
-Hi! Welcome to my Talk Like a President NLP (Natural Language Processing) project!!
+Hi! Welcome to my Talk Like a President NLP (Natural Language Processing) project.
 
 This app uses simple NLP to rewrite your sentence in the style of real U.S. Presidents, based on their **inaugural addresses**, whether they served one or two terms.
 
@@ -31,7 +31,9 @@ You’ll see:
 - 🧱 **Basic Rewriter** - swaps vocabulary using that president’s inauguration speech.
 - 🧠 **POS-Based Rewriter** - mimics grammar, structure, and tone inspired by their rhetoric.
 
-*Educational demo — apolitical; not affiliated with any government or campaign.*
+*Educational demo: apolitical; not affiliated with any government or campaign.*
+
+Thank you for visiting my website!
 """
 )
 
