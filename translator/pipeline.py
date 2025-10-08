@@ -5,9 +5,21 @@ import nltk
 from nltk import pos_tag, word_tokenize
 
 
-nltk.download('punkt', quiet=True)
-nltk.download('punkt_tab', quiet=True)  # <— NEW LINE
-nltk.download('averaged_perceptron_tagger', quiet=True)
+
+import nltk
+
+for resource in [
+    "punkt",
+    "punkt_tab",
+    "averaged_perceptron_tagger",
+    "averaged_perceptron_tagger_eng",
+    "averaged_perceptron_tagger_en",
+]:
+    try:
+        nltk.download(resource, quiet=True)
+    except:
+        pass
+
 
 
 
