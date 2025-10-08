@@ -63,10 +63,18 @@ if st.button("Translate"):
     else:
         st.warning("Please enter a sentence to translate.")
 
-with st.expander("📊 Usage Data (Private View)"):
+st.divider()
+st.write("🔒 Admin Access")
+
+admin_code = st.text_input("Enter admin code to view analytics:", type="password")
+
+if admin_code == "vervuq-nuqja6-jujSon":
     if os.path.exists("usage_log.csv"):
         df_log = pd.read_csv("usage_log.csv")
+        st.subheader("📊 Usage Data (Private View)")
         st.write(df_log.tail(10))
         st.bar_chart(df_log['president'].value_counts())
     else:
         st.write("No usage data yet.")
+elif admin_code:
+    st.error("Incorrect admin code.")
