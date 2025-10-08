@@ -33,7 +33,7 @@ You’ll see:
 
 *Educational demo: apolitical; not affiliated with any government or campaign.*
 
-Thank you for visiting my website!
+Thank you for visiting my app!
 """
 )
 
@@ -66,7 +66,7 @@ if st.button("Translate"):
 st.divider()
 st.write("🔒 Admin Access")
 
-admin_code = st.text_input("Enter admin code to view analytics:", type="password")
+admin_code = st.text_input("admin", type="password")
 
 if admin_code == "vervuq-nuqja6-jujSon":
     if os.path.exists("usage_log.csv"):
